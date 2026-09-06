@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>신세계 CX 워크숍 · 강사 안내 (TF 2차 반영)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2430; --ink-soft:#4A5568;
+    --paper:#F6F4EE; --paper-2:#EFEBE0; --line:#D9D3C4;
+    --gold:#A6752C; --gold-soft:#C79A4B;
+    --sage:#5B6B58; --sage-soft:#E4E8DF;
+    --red:#8B2E2E; --red-soft:#F3E4E0;
+    --blue:#2E5C8B; --blue-soft:#E1EAF3;
+    --green:#3B7A3B; --green-soft:#E3EEE1;
+    --amber:#9C6B1F; --amber-soft:#F4E9D2;
+    --serif:'Noto Serif KR', serif; --sans:'Pretendard', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans); background:var(--paper); color:var(--ink); line-height:1.65;}
+  a{color:inherit;}
+
+  .hero{background:var(--ink); color:var(--paper); padding:56px 24px 32px;}
+  .hero-inner{max-width:940px; margin:0 auto;}
+  .eyebrow{font-size:12px; letter-spacing:0.12em; color:var(--gold-soft); font-weight:600; margin-bottom:14px; text-transform:uppercase;}
+  .hero h1{font-family:var(--serif); font-weight:600; font-size:clamp(24px,4.5vw,38px); line-height:1.35; margin-bottom:14px;}
+  .hero p.sub{font-size:15px; color:#C9CDD6; max-width:64ch; margin-bottom:20px;}
+  .quote{
+    border-left:2px solid var(--gold-soft); padding:12px 16px; font-size:13px; color:#B9BFC9;
+    font-style:italic; max-width:64ch; margin-bottom:28px;
+  }
+  .hero-facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); border-top:1px solid #38414F; padding-top:20px; margin-bottom:20px;}
+  .fact{padding:0 16px 0 0; border-right:1px solid #38414F;}
+  .fact:last-child{border-right:none;}
+  .fact .num{font-family:var(--serif); font-size:24px; color:var(--gold-soft); font-weight:600;}
+  .fact .label{font-size:11px; color:#9AA1AD; margin-top:3px;}
+
+  .legend{display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:#9AA1AD;}
+  .legend .item{display:flex; align-items:center; gap:6px;}
+
+  .status{display:inline-block; font-size:10px; font-weight:700; padding:2px 9px; border-radius:10px; letter-spacing:0.02em; white-space:nowrap;}
+  .status-confirmed{background:var(--green-soft); color:var(--green);}
+  .status-draft{background:var(--blue-soft); color:var(--blue);}
+  .status-tentative{background:var(--amber-soft); color:var(--amber);}
+  .status-pending{background:var(--red-soft); color:var(--red);}
+  .status-ref{background:var(--sage-soft); color:var(--sage);}
+
+  .directory{background:var(--ink); border-top:1px solid #38414F;}
+  .directory-inner{max-width:940px; margin:0 auto; padding:0 24px; display:flex; overflow-x:auto;}
+  .directory a{display:flex; align-items:center; gap:8px; padding:14px 16px; white-space:nowrap; border-right:1px solid #2C3542; font-size:12px; color:#B9BFC9; text-decoration:none;}
+  .directory a:hover{background:#242D3A; color:var(--paper);}
+  .directory a .floor-num{font-family:var(--serif); color:var(--gold-soft); font-weight:600; font-size:14px;}
+
+  section{max-width:940px; margin:0 auto; padding:52px 24px;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:8px;}
+  .section-head .floor-plate{font-family:var(--serif); font-size:32px; font-weight:700; color:var(--gold); min-width:60px;}
+  .section-head h2{font-family:var(--serif); font-size:22px; font-weight:600;}
+  .sec-eyebrow{display:block; font-size:11px; color:var(--ink-soft); letter-spacing:0.06em; margin-bottom:4px;}
+  .sec-tag{margin-left:8px;}
+  p.lead{font-size:14.5px; color:var(--ink-soft); max-width:70ch; margin:14px 0 22px;}
+  h3.sub-h{font-size:15px; font-weight:600; margin:22px 0 8px; display:flex; align-items:center; gap:8px;}
+  h4.card-h{font-size:14px; font-weight:600; margin-bottom:6px;}
+
+  .card{background:#fff; border:1px solid var(--line); border-radius:6px; padding:18px 20px; margin-bottom:12px;}
+  .card p{font-size:13.5px; color:var(--ink-soft);}
+  .card ul{margin:8px 0 0 18px; font-size:13.5px; color:var(--ink-soft);}
+  .card ul li{margin-bottom:4px;}
+
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin:8px 0 22px;}
+  th{text-align:left; font-size:11.5px; color:var(--ink-soft); font-weight:600; padding:9px 10px; border-bottom:2px solid var(--ink);}
+  td{padding:10px; border-bottom:1px solid var(--line); vertical-align:top;}
+  tr:last-child td{border-bottom:2px solid var(--ink);}
+
+  .catalog{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin-top:12px;}
+  .cat-card{background:#fff; border:1px solid var(--line); border-radius:6px; padding:16px; border-left:3px solid var(--sage);}
+  .cat-card .cat-num{font-family:var(--serif); font-size:12px; color:var(--ink-soft); margin-bottom:5px;}
+  .cat-card p{font-size:12.5px; color:var(--ink-soft);}
+
+  .compare{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0 20px;}
+  .compare .box{border-radius:6px; padding:14px 16px; font-size:13px;}
+  .compare .before{background:var(--red-soft); color:var(--red);}
+  .compare .after{background:var(--green-soft); color:var(--green);}
+  .compare .box strong{display:block; margin-bottom:6px; font-size:12px;}
+  .compare ul{margin:0 0 0 16px;}
+  @media (max-width:560px){.compare{grid-template-columns:1fr;}}
+
+  .flow{background:#fff; border:1px solid var(--line); border-radius:6px; padding:16px 18px; font-size:13.5px; color:var(--ink-soft); margin:10px 0 18px;}
+
+  .checklist{list-style:none;}
+  .checklist li{display:flex; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); font-size:13.5px; align-items:flex-start;}
+  .checklist li:last-child{border-bottom:none;}
+  .checklist .mark{flex-shrink:0; width:18px; height:18px; border:1.5px solid var(--gold); border-radius:4px; margin-top:2px;}
+
+  .openq{background:#fff; border:1px solid var(--line); border-left:3px solid var(--red); border-radius:6px; padding:14px 18px; margin-bottom:10px;}
+  .openq h4{font-size:13.5px; font-weight:600; margin-bottom:4px;}
+  .openq p{font-size:13px; color:var(--ink-soft);}
+
+  footer{background:var(--ink); color:#9AA1AD; text-align:center; padding:28px 24px; font-size:11.5px;}
+
+  @media (max-width:640px){
+    .hero{padding:44px 20px 28px;} section{padding:36px 20px;}
+    .section-head .floor-plate{font-size:24px; min-width:44px;}
+    table{font-size:12.5px;} th, td{padding:7px 5px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">강사 안내 · Instructor Briefing · TF 2차 반영</div>
+    <h1>신세계 4개 사업부 고객경험(CX) 개선 워크숍</h1>
+    <p class="sub">취준생 대상 디자인씽킹 공감·문제정의 워크숍 — 7명의 강사가 7개 지역에서 동일한 프로그램을 진행합니다. 이 페이지 하나로 배경, 과제, 일정, 운영 기준을 확인하세요.</p>
+    <div class="quote">"실제 사람의 경험을 출발점으로 고객을 깊이 이해하고 문제를 정의한 뒤, AI는 인간의 관점을 대체하지 않고 확장·보완하는 도구로 활용하여 고객경험 개선안을 구체화하고 제안하는 17시간의 CX 프로젝트." — TF 2차 회의 (8/25)</div>
+    <div class="hero-facts">
+      <div class="fact"><div class="num">17h</div><div class="label">3일 (7h·7h·3h)</div></div>
+      <div class="fact"><div class="num">4</div><div class="label">참여 사업부</div></div>
+      <div class="fact"><div class="num">7×7</div><div class="label">강사 · 지역</div></div>
+      <div class="fact"><div class="num">9.8</div><div class="label">개강일 (9월 8일)</div></div>
+    </div>
+    <div class="legend">
+      <div class="item"><span class="status status-confirmed">확정</span> 신세계와 확인 완료</div>
+      <div class="item"><span class="status status-draft">초안수정</span> 이전 안내에서 바뀐 부분</div>
+      <div class="item"><span class="status status-tentative">잠정</span> 방향은 잡았으나 유동적</div>
+      <div class="item"><span class="status status-pending">확인필요</span> 신세계 측 답변 대기 중</div>
+    </div>
+  </div>
+</div>
+
+<nav class="directory">
+  <div class="directory-inner">
+    <a href="#f1"><span class="floor-num">B3</span> 프로젝트 배경</a>
+    <a href="#f1c"><span class="floor-num">B2</span> 설계 원칙</a>
+    <a href="#f1b"><span class="floor-num">B1</span> 전체 커리큘럼</a>
+    <a href="#f2"><span class="floor-num">1F</span> 사업부·개인과제</a>
+    <a href="#f3"><span class="floor-num">2F</span> 강사 역할</a>
+    <a href="#f4"><span class="floor-num">3F</span> 3일 일정</a>
+    <a href="#f5"><span class="floor-num">4F</span> 워크숍 콘텐츠</a>
+    <a href="#f6"><span class="floor-num">5F</span> 발표&평가</a>
+    <a href="#f7"><span class="floor-num">6F</span> 체크리스트</a>
+    <a href="#f8"><span class="floor-num">7F</span> 확인 필요</a>
+  </div>
+</nav>
+
+<section id="f1">
+  <div class="section-head"><div class="floor-plate">B3</div><div><span class="sec-eyebrow">WHY</span><h2>프로젝트 배경</h2></div></div>
+  <p class="lead">참가자들은 이전 미니프로젝트(아이디어톤)에서 디자인씽킹 5단계를 이미 얕게 경험했습니다. 이번 워크숍은 전체 프로세스를 반복하지 않고, <strong>공감(Empathize)과 문제정의(Define)</strong> 두 단계를 깊게 훈련하되, 아이디어 도출·시각화·발표까지 연결합니다.</p>
+  <div class="card">
+    <h4 class="card-h">워크숍이 하는 일 / 하지 않는 일</h4>
+    <p>신세계 측 요청에 따라, 이 워크숍은 각 사업부 <strong>개인 과제(평가 비중 40%)를 대신 풀어주지 않습니다.</strong> 개인 과제는 참고용으로만 활용하고, 팀 워크숍은 사업부의 넓은 맥락과 키워드만 참고해 자유롭게 진행합니다. 목표는 인터뷰 기반 공감·문제정의를 명확히 정리하고, 필요 시 AI로 시각화해 Day3에 발표하는 것입니다.</p>
+  </div>
+  <div class="card">
+    <h4 class="card-h">현장 제약 <span class="status status-confirmed">확정</span></h4>
+    <p>신세계 현직자/사업부 이해관계자 인터뷰 섭외는 <strong>불가능합니다.</strong> 워크숍 전주에 실무자들이 대거 전국 권역 업무에 투입되어 인력 여유가 없기 때문입니다. 따라서 Day1 인터뷰는 <strong>교육장 내 경험자 인터뷰</strong>로 진행합니다.</p>
+  </div>
+</section>
+
+<section id="f1c">
+  <div class="section-head"><div class="floor-plate">B2</div><div><span class="sec-eyebrow">HOW</span><h2>설계 원칙 4가지</h2></div></div>
+  <p class="lead">"무엇을 가르칠 것인가"보다 "이 과정을 끝낸 참여자가 고객을 어떻게 바라보고 행동하게 될 것인가"를 먼저 봅니다.</p>
+  <div class="catalog">
+    <div class="cat-card"><div class="cat-num">01</div><h4 class="card-h">Human First</h4><p>도구보다 사람. 최소 한 번은 실제 사람의 목소리를 직접 듣게 합니다.</p></div>
+    <div class="cat-card"><div class="cat-num">02</div><h4 class="card-h">Evidence</h4><p>추측보다 인터뷰·관찰. 웹자료만으로 문제를 정의하지 않습니다.</p></div>
+    <div class="cat-card"><div class="cat-num">03</div><h4 class="card-h">Light & Deep</h4><p>이론은 가볍게, 경험은 깊게. 방법론 설명 시간을 줄이고 실습·완성에 집중합니다.</p></div>
+    <div class="cat-card"><div class="cat-num">04</div><h4 class="card-h">Make Visible</h4><p>아이디어는 보이게 제안. 형식(PPT/이미지/웹앱)보다 논리와 경험 변화가 핵심입니다.</p></div>
+  </div>
+
+  <h3 class="sub-h">강화된 원칙 · Human First, AI Plus <span class="status status-confirmed">확정</span></h3>
+  <div class="card">
+    <p>TF 2차 회의(8/25)의 핵심 논점은 "AI를 쓸 것인가"가 아니라 <strong>"AI를 어디에 위치시킬 것인가"</strong>였습니다. AI 활용의 효율성은 인정하되, 문제를 포착하는 경험 자체를 AI에 넘기면 Human-Centered 본질이 약화될 수 있다는 우려가 함께 논의되었습니다.</p>
+    <div class="flow"><strong>권장 흐름</strong> — 사람이 먼저 보고·듣고·생각한다 → AI로 확장하거나 비교한다 → 실제 근거와 다시 대조한다 → 사람이 최종 판단한다.</div>
+    <ul>
+      <li>AI가 생성한 내용은 정답이 아니라 가설·재료로 취급</li>
+      <li>현장에서 직접 포착한 고객의 '날것의 언어'가 AI를 거치며 사라지지 않도록 안내</li>
+      <li>AI가 문제 발견의 주체가 되지 않도록 앞단의 인간 경험을 충분히 확보</li>
+      <li>AI는 '주' 요소가 아닌 '부' 요소로만 활용 <span class="status status-confirmed">확정</span></li>
+      <li>사람이 만든 결과와 AI가 확장한 결과를 비교하는 시간을 공통 프로세스로 운영 <span class="status status-confirmed">확정</span></li>
+    </ul>
+  </div>
+
+  <h3 class="sub-h">페르소나의 역할 재정의 <span class="status status-draft">초안수정</span></h3>
+  <div class="card">
+    <p>페르소나는 양식을 채우는 활동이 아니라, "이 상황을 실제로 살아가는 사람은 누구인가?"를 구체적으로 생각하게 만드는 장치입니다. 최소 요소는 나이·생애주기·직업 등 한 줄 설명, 하루 일과 또는 Wants/Friction, 대표 인용구 한 문장입니다.</p>
+    <div class="flow"><strong>경험 흐름</strong> — 가상의 페르소나 사례 보기 → Pain/상황 추론 → 인터뷰 질문 생각하기 → 팀 프로젝트 페르소나 구성 → 실제 유사 경험자 인터뷰 → 최초 가정과 실제 목소리 비교</div>
+  </div>
+</section>
+
+<section id="f1b">
+  <div class="section-head"><div class="floor-plate">B1</div><div><span class="sec-eyebrow">전체 그림</span><h2>유통 특화 직무 공통과정 속 내 파트의 위치</h2></div></div>
+  <p class="lead">이 워크숍은 [신세계그룹 K-뉴딜 아카데미] 유통 특화 직무 공통과정(퓨처앤드림아카데미 유통직무 커리큘럼)의 마지막 파트입니다. 참가자들은 앞선 18개 과목을 통해 유통 개론, 소비자 심리, 마케팅 기본, 시장조사 방법론 등을 이미 학습하고 옵니다 — 즉 개념 설명 없이 바로 실습으로 들어가도 됩니다.</p>
+  <table>
+    <tr><th style="width:28px">#</th><th>과목</th><th>주제 요지</th><th style="width:110px">강의 방식</th></tr>
+    <tr><td>1</td><td>유통개론</td><td>유통의 개념과 시대적 흐름, 채널별 특성과 사례</td><td>사례중심 강의</td></tr>
+    <tr><td>2</td><td>데이터 기반의 트렌드 캐칭</td><td>검색데이터 분석과 트렌드 요약 실습</td><td>강의·실습·발표</td></tr>
+    <tr><td>3</td><td>온오프라인 시장조사 방법론</td><td>시장조사 목적 설정부터 보고서 작성까지</td><td>강의·실습·현장조사</td></tr>
+    <tr><td>4</td><td>유통채널 전략</td><td>피지털(피지컬+디지털) 전략과 해외 사례</td><td>사례중심 강의</td></tr>
+    <tr><td>5</td><td>유통채널 전략 케이스스터디</td><td>팀별 기업 선정, 채널전략 분석(올리브영·다이소 등)</td><td>사례분석·발표(팀별)</td></tr>
+    <tr><td>6</td><td>유통인에게 꼭 필요한 마케팅의 기본 1,2</td><td>3C·SWOT·STP·페르소나·4P 실습</td><td>강의·실습·발표</td></tr>
+    <tr><td>7</td><td>소비자 심리와 쇼핑</td><td>매장 동선·진열, 가격 설정에 심리 활용법</td><td>사례중심 강의</td></tr>
+    <tr><td>8</td><td>고객관점 경영 케이스 스터디</td><td>가치와 경험, 트렌드 키워드로 본 소비자</td><td>사례중심 강의</td></tr>
+    <tr><td>9</td><td>고객 서비스 마인드와 실전</td><td>불만 고객 응대, DISC 유형별 커뮤니케이션 역할극</td><td>강의·역할실습</td></tr>
+    <tr><td>10</td><td>SNS 마케팅</td><td>채널별 특징, 인플루언서/임플로이언서 마케팅 사례</td><td>강의·사례분석·발표</td></tr>
+    <tr><td>11</td><td>브랜드와 브랜딩</td><td>브랜드의 본질과 지속가능한 브랜딩 요소</td><td>강의·사례분석·발표</td></tr>
+    <tr><td>12</td><td>퍼스널 브랜딩과 인스타그램</td><td>목적 있는 계정 기획·운영 실습</td><td>강의·실습·발표</td></tr>
+    <tr><td>13</td><td>머천다이징 개론</td><td>MD의 정의와 채널별 역할</td><td>강의</td></tr>
+    <tr><td>14</td><td>마케팅 전략 비교 분석</td><td>경쟁 기업 2곳 마케팅 전략 비교·발표</td><td>사례분석·발표(팀별)</td></tr>
+    <tr><td>15</td><td>MD실무</td><td>카테고리 관리, 매장 구성·진열, 가격·이익관리</td><td>사례중심 강의</td></tr>
+    <tr><td>16</td><td>MD 실무_협력업체 관리와 협상</td><td>상생 협력업체 관리와 협상 실습</td><td>강의·역할실습·발표</td></tr>
+    <tr><td>17</td><td>MD 실무_PL</td><td>NB와 PL의 이해, 기업별 PL 사례</td><td>강의·사례분석·발표</td></tr>
+    <tr><td>18</td><td>MD 실무_프로모션 기획</td><td>프로모션 기획 요인과 실습</td><td>강의·팀별실습·발표</td></tr>
+    <tr style="background:var(--sage-soft)"><td>19</td><td><strong>[별도 진행/참고용] 고객경험 개선제안 프로젝트</strong> <span class="status status-ref">MY PART</span></td><td>사람 인터뷰 → 공감 정리 → 문제정의 → 발표</td><td>강의·팀별실습·발표</td></tr>
+  </table>
+</section>
+
+<section id="f2">
+  <div class="section-head"><div class="floor-plate">1F</div><div><span class="sec-eyebrow">4개 사업부</span><h2>참여 사업부 · 개인 과제 (참고용) <span class="status status-draft sec-tag">초안수정</span></h2></div></div>
+  <p class="lead">아래 8개 과제는 <strong>사업부별 개인 평가 과제</strong>이며, 팀 워크숍의 주제가 아닙니다. 강사는 이 내용을 워크숍에서 직접 풀어주지 말고, 사업부 맥락과 키워드 정도만 참고해 예시·사례를 들 때 활용해주세요. (기존 안내의 A/B 유형 고정 구조는 폐기되었습니다.)</p>
+  <div class="compare">
+    <div class="box before"><strong>기존 안내</strong>
+      <ul>
+        <li>과제를 A(기존개선)/B(신규기획) 유형으로 나누고</li>
+        <li>팀을 유형별로 배정, 방법론도 유형에 맞춰 고정</li>
+        <li>워크숍이 사실상 개인 과제를 대신 풀어주는 구조로 읽힘</li>
+      </ul>
+    </div>
+    <div class="box after"><strong>현재 방향</strong>
+      <ul>
+        <li>개인 과제와 팀 워크숍 주제를 명확히 분리</li>
+        <li>팀은 사업부의 넓은 키워드·고객 경험 맥락만 참고</li>
+        <li>어떤 형식이든 고객-문제-아이디어-변화가 명확하면 인정</li>
+      </ul>
+    </div>
+  </div>
+  <table>
+    <tr><th>사업부</th><th>개인 과제 내용 (참고용)</th></tr>
+    <tr><td>이마트</td><td>신선식품 코너 신뢰도·구매 매력도 향상 CX 개선안</td></tr>
+    <tr><td>이마트</td><td>AI 에이전트 활용 맞춤형 쇼핑 지원 서비스 기획</td></tr>
+    <tr><td>조선호텔앤리조트</td><td>MZ세대 대상 럭셔리 호텔 서비스 아이디어</td></tr>
+    <tr><td>조선호텔앤리조트</td><td>브랜드 이미지 강화를 위한 고객 접점 서비스 개선</td></tr>
+    <tr><td>신세계푸드</td><td>이마트/트레이더스 고객 대상 베이커리 신제품 콘셉트</td></tr>
+    <tr><td>신세계푸드</td><td>대형마트 베이커리 매장 CX 개선</td></tr>
+    <tr><td>신세계아이앤씨</td><td>AI 활용 오프라인 매장 진열·재고관리 개선</td></tr>
+    <tr><td>신세계아이앤씨</td><td>AI 활용 오프라인 매장 고객 응대·안내 개선</td></tr>
+  </table>
+  <div class="card">
+    <h4 class="card-h">신세계아이앤씨 팀 안내 시 주의</h4>
+    <p>신세계아이앤씨는 B2B 인프라 회사이지만, 과제 자체는 소비자 대상 서비스(AI 매장 진열·응대)입니다. 팀에게 최종 고객을 <strong>"AI 매장 서비스를 이용하는 이마트/트레이더스 소비자"</strong>로 명확히 정의해주세요.</p>
+  </div>
+</section>
+
+<section id="f3">
+  <div class="section-head"><div class="floor-plate">2F</div><div><span class="sec-eyebrow">운영 모델</span><h2>강사 역할과 지역 간 일관성 <span class="status status-draft sec-tag">초안수정</span></h2></div></div>
+  <p class="lead">한 명의 강사가 한 지역에서 오리엔테이션부터 발표까지 전 과정을 혼자 진행합니다. 모든 활동을 동일하게 통제하기보다, <strong>"똑같이 진행하라"가 아니라 "같은 목적지에 도착하라"</strong>는 기준으로 지역 간 품질을 관리합니다.</p>
+  <div class="compare">
+    <div class="box after"><strong>공통으로 맞출 것</strong>
+      <ul><li>공통 목표</li><li>전체 프로세스 · 필수 단계</li><li>필수 산출물</li><li>평가 기준 · 최종 발표 기준</li></ul>
+    </div>
+    <div class="box" style="background:var(--paper-2); color:var(--ink-soft)"><strong style="color:var(--ink)">강사 재량으로 둘 것</strong>
+      <ul><li>팀빌딩 방식 · 에너자이저</li><li>사례 · 세부 퍼실리테이션 기법</li><li>질문 방식</li><li>보조 활동</li></ul>
+    </div>
+  </div>
+
+  <h3 class="sub-h">지역별 필수 확인 산출물 (품질관리 체크포인트)</h3>
+  <table>
+    <tr><th style="width:110px">체크 시점</th><th>공통 확인 산출물</th></tr>
+    <tr><td>Day1 오전</td><td>페르소나 포스터</td></tr>
+    <tr><td>Day1 오후</td><td>인터뷰 결과 기반 공감 캔버스</td></tr>
+    <tr><td>Day2 오전</td><td>최종 문제 정의 및 아이디어</td></tr>
+    <tr><td>Day2 오후</td><td>프로토타입 초안</td></tr>
+    <tr><td>Day3</td><td>최종 제안자료 + 발표</td></tr>
+  </table>
+
+  <div class="catalog">
+    <div class="cat-card"><div class="cat-num">01</div><h4 class="card-h">평가 기준 6가지 확정</h4><p>내용이해 · 구체성 · 현실성 · 기준준수 · 협업 · 발표. 발표 영상+결과물(PDF) 기반으로 심사위원이 평가합니다.</p></div>
+    <div class="cat-card"><div class="cat-num">02</div><h4 class="card-h">강사 간 Q&A 채널</h4><p>진행 중 애매한 상황 발생 시 즉시 공유할 단톡방 운영.</p></div>
+    <div class="cat-card"><div class="cat-num">03</div><h4 class="card-h">중간 산출물 아카이빙 <span class="status status-confirmed">확정</span></h4><p>여러 지역이 동시 운영되는 만큼, 중간 산출물은 강사 단톡방에서 공유해 어느 지역이 어느 단계까지 왔는지 파악합니다.</p></div>
+  </div>
+</section>
+
+<section id="f4">
+  <div class="section-head"><div class="floor-plate">3F</div><div><span class="sec-eyebrow">17시간</span><h2>3일 일정 개요 <span class="status status-confirmed sec-tag">확정</span></h2></div></div>
+  <p class="lead">계획안 PDF 기준 세부 시간표입니다. Day1은 Discover(고객을 발견하다), Day2는 Design(경험을 설계하다), Day3는 Deliver(경험을 제안하다)의 흐름으로 진행합니다.</p>
+
+  <h3 class="sub-h">Day1. Discover · 고객을 발견하다</h3>
+  <table>
+    <tr><th style="width:100px">시간</th><th style="width:150px">내용</th><th>세부내용</th></tr>
+    <tr><td>09:00–09:50</td><td>오리엔테이션</td><td>강사소개 및 프로그램 소개 (목적과 목표를 명확하게 설명) · 사람 중심의 문제해결방법론 디자인씽킹 리마인드</td></tr>
+    <tr><td>10:00–10:50</td><td>페르소나 선정</td><td>4개 사업부별 페르소나 선정 · 페르소나 프로필 작성, 예상 니즈 도출</td></tr>
+    <tr><td>11:00–11:50</td><td>페르소나 포스터 그리기</td><td><strong>페르소나 포스터 제작</strong> · 갤러리 워크 — 다른 참여자들이 포스터에 하트 표시로 공감 피드백 남기기 <span class="status status-confirmed">확정</span></td></tr>
+    <tr><td>11:50–13:00</td><td colspan="2">점심시간</td></tr>
+    <tr><td>13:00–13:50</td><td>인터뷰 질문 만들기</td><td>고객 대면 인터뷰의 중요성 · 인터뷰 질문 만들기</td></tr>
+    <tr><td>14:00–15:20</td><td>고객 인터뷰 진행 및 정리</td><td>고객 인터뷰 진행 및 정리 · <strong>인터뷰 결과 기반 공감 캔버스 작성(Pain Points, Needs)</strong></td></tr>
+    <tr><td>15:30–16:50</td><td>AI 활용 고객경험 분석</td><td>AI를 활용한 고객경험 프로세스 · 문제 도출 및 리스트업 · 기존에 도출된 문제와의 비교 및 확장</td></tr>
+    <tr><td>16:50–17:00</td><td>소감 작성 및 나눔</td><td>회고 질문 · 소감 작성 및 나눔</td></tr>
+  </table>
+
+  <h3 class="sub-h">Day2. Design · 경험을 설계하다</h3>
+  <table>
+    <tr><th style="width:100px">시간</th><th style="width:150px">내용</th><th>세부내용</th></tr>
+    <tr><td>09:00–10:20</td><td>진짜 문제 정의</td><td>핵심 페르소나 정리 · 진짜 문제 정의(POV, HMW 작성) — <strong>최종 문제정의</strong> · 조별 확장 질문 나눔 및 피드백</td></tr>
+    <tr><td>10:30–11:10</td><td>아이디어 발산</td><td>아이디어 브레인스토밍 · <strong>집단지성을 활용한 아이디어 발산</strong></td></tr>
+    <tr><td>11:10–11:50</td><td>프로토타입 제작</td><td>아이디어 기반 <strong>프로토타입 제작</strong> · AI, 바이브 코딩 등을 활용하여 아이디어 구체화, 시각화</td></tr>
+    <tr><td>11:50–13:00</td><td colspan="2">점심시간</td></tr>
+    <tr><td>13:00–13:30</td><td>프로토타입 제작</td><td><strong>프로토타입 초안</strong> 고도화</td></tr>
+    <tr><td>13:30–15:20</td><td>PPT 제작 1부</td><td>PPT 필수 구성요소 전달 · 발표 초안 작성</td></tr>
+    <tr><td>15:30–17:00</td><td>PPT 제작 2부</td><td>초안 발표 및 피드백 · 디자인 및 발표 내용 보완</td></tr>
+  </table>
+
+  <h3 class="sub-h">Day3. Deliver · 경험을 제안하다</h3>
+  <table>
+    <tr><th style="width:100px">시간</th><th style="width:150px">내용</th><th>세부내용</th></tr>
+    <tr><td>09:00–09:50</td><td>발표 준비 및 최종 리허설</td><td>최종 발표 자료 전달(사운드 체크) · 팀 수에 따라 준비 시간 증가</td></tr>
+    <tr><td>10:00–11:40</td><td>팀별 발표 및 피드백</td><td>10분 발표 5분 피드백 (팀 수에 따라 피드백 시간 증가)</td></tr>
+    <tr><td>11:40–12:00</td><td>회고 및 성찰</td><td>전체 프로그램 회고 질문 성찰 및 나눔</td></tr>
+  </table>
+
+  <h3 class="sub-h">운영 조건</h3>
+  <table>
+    <tr><th style="width:130px">항목</th><th style="width:150px">현재 상태</th><th>운영 의미</th></tr>
+    <tr><td>총 운영시간</td><td>17시간</td><td>Day1 7h + Day2 7h + Day3 3h</td></tr>
+    <tr><td>운영 방식</td><td>7개 지역 / 7명 강사</td><td>한 명의 강사가 한 지역의 전 과정 리딩</td></tr>
+    <tr><td>참여 사업부</td><td>4개</td><td>이마트 · 조선호텔앤리조트 · 신세계푸드 · 신세계아이앤씨</td></tr>
+    <tr><td>현직자 인터뷰</td><td>불가 확정</td><td>교육장 내 경험자 인터뷰 + 필요 시 VOC·SNS·리뷰 리서치로 보완</td></tr>
+    <tr><td>8개 사업부 과제</td><td>개인 평가 과제</td><td>워크숍에서 직접 풀어주지 않음</td></tr>
+    <tr><td>기존 A/B 유형</td><td>폐기</td><td>개인과제와 팀 워크숍을 분리</td></tr>
+    <tr><td>Day3</td><td>09:00–12:00</td><td>발표 촬영 + 상호 Q&A + 강사 피드백</td></tr>
+  </table>
+</section>
+
+<section id="f5">
+  <div class="section-head"><div class="floor-plate">4F</div><div><span class="sec-eyebrow">방법론 카탈로그</span><h2>고객경험 분석 워크숍 콘텐츠 <span class="status status-draft sec-tag">초안수정</span></h2></div></div>
+  <p class="lead">신세계 직원 인터뷰가 불가능해진 만큼, Day1 리서치는 교육장 내 경험자 인터뷰를 중심 축으로 하고 나머지는 보조 수단으로 활용합니다. AI 시각화는 필수가 아닌 선택입니다.</p>
+
+  <div class="card">
+    <h4 class="card-h">참고자료 · 아이디어톤 실제 결과물 <span class="status status-ref">참고용</span></h4>
+    <p>참가자들이 이전 아이디어톤(Start Camp, 원데이 디자인씽킹 워크숍)에서 실제로 만든 발표 결과물입니다. 페르소나 구체화 수준, 문제정의·아이디어 전개 방식을 미리 살펴보시면 이번 워크숍에서 참가자들에게 어느 정도 깊이를 기대할 수 있을지 감을 잡는 데 도움이 됩니다.<br>
+    <a href="https://drive.google.com/drive/folders/1pcXA0VLLZjpyGVQNYSpiRghbOY5EEsfb?usp=drive_link" target="_blank" style="color:var(--gold); font-weight:600;">→ 아이디어톤 결과물 전체 보기 (Google Drive)</a></p>
+  </div>
+
+  <div class="catalog">
+    <div class="cat-card"><div class="cat-num">01</div><h4 class="card-h">교육장 내 경험자 인터뷰</h4><p>Day1 핵심 실습. 같은 조/다른 조에서 해당 경험을 해본 사람을 찾아 직접 인터뷰.</p></div>
+    <div class="cat-card"><div class="cat-num">02</div><h4 class="card-h">경쟁사 벤치마킹</h4><p>동종업계 경쟁사와 비교해 강약점 도출.</p></div>
+    <div class="cat-card"><div class="cat-num">03</div><h4 class="card-h">공감 캔버스 & 페르소나</h4><p>Pain·Needs·Insight 정리 → 아이디어톤보다 구체적인 페르소나로.</p></div>
+    <div class="cat-card"><div class="cat-num">04</div><h4 class="card-h">HMW/POV 문제정의</h4><p>인사이트를 실행 가능한 질문으로 전환 — 이론 깊이는 낮추고 실습 중심.</p></div>
+    <div class="cat-card"><div class="cat-num">05</div><h4 class="card-h">공통 포함 내용</h4><p>대상·근거·Pain/Insight·문제정의·아이디어·작동방식·고객경험 변화·기대효과를 팀마다 공통으로 담습니다. 지역 간 산출물 편차를 줄이는 핵심 장치.</p></div>
+    <div class="cat-card"><div class="cat-num">06</div><h4 class="card-h">AI 시각화 (선택)</h4><p>PPT/이미지/웹앱 등 자유 형식. "웹앱을 만들었는가"가 아니라 고객-문제-아이디어-변화 논리가 명확한지가 평가 포인트.</p></div>
+  </div>
+</section>
+
+<section id="f6">
+  <div class="section-head"><div class="floor-plate">5F</div><div><span class="sec-eyebrow">Day3</span><h2>발표 & 평가 방식 <span class="status status-confirmed sec-tag">확정</span></h2></div></div>
+  <p class="lead">Day3는 결과물을 멋지게 보여주는 시간이 아니라, 고객경험 개선 논리를 명확히 전달하는 시간입니다.</p>
+  <div class="card">
+    <h4 class="card-h">발표 진행 방식</h4>
+    <p>발표는 <strong>반별로 진행</strong>하며, 팀별 발표를 <strong>휴대폰으로 영상 촬영</strong>합니다. 이후 심사위원단이 <strong>발표 PPT와 발표 영상</strong>을 함께 보고 평가할 예정입니다. 발표가 끝나면 <strong>교육생 상호 질의응답 → 강사 피드백</strong> 순으로 마무리합니다.</p>
+  </div>
+  <div class="card">
+    <h4 class="card-h">평가 기준 6가지 <span class="status status-confirmed">확정</span></h4>
+    <p>내용이해 · 구체성 · 현실성 · 기준준수 · 협업 · 발표 — 6가지 기준으로 발표 PDF와 영상을 심사위원이 평가합니다.</p>
+  </div>
+  <div class="card">
+    <h4 class="card-h">결과물 활용 · 아카이빙 <span class="status status-confirmed">확정</span></h4>
+    <p>최종 결과물은 <strong>교육/아카이빙 용도로만</strong> 사용합니다. 채용평가 자료나 실제 사업부 검토로는 활용하지 않습니다. 지역별 결과물은 <strong>동일한 형식으로 통일</strong>해 아카이빙합니다.</p>
+  </div>
+  <div class="card">
+    <h4 class="card-h">공통 발표 구조 (권장)</h4>
+    <p>① 우리가 선택한 고객은 누구인가 → ② 그 고객은 어떤 경험을 하고 있었는가 → ③ 인터뷰에서 무엇을 발견했는가 → ④ 어떤 문제를 정의했는가 → ⑤ 어떤 아이디어를 제안하는가 → ⑥ 어떻게 작동하는가 → ⑦ 고객경험은 어떻게 달라지는가 → ⑧ 신세계에는 어떤 긍정적 효과가 있는가</p>
+  </div>
+</section>
+
+<section id="f7">
+  <div class="section-head"><div class="floor-plate">6F</div><div><span class="sec-eyebrow">놓치면 안 되는 것</span><h2>진행 체크리스트</h2></div></div>
+  <ul class="checklist">
+    <li><div class="mark"></div><div><strong>신세계 현직자 인터뷰는 불가 확정</strong> <span class="status status-confirmed">확정</span> — Day1은 교육장 내 경험자 인터뷰만으로 설계</div></li>
+    <li><div class="mark"></div><div>Day1~Day2 사이 별도 리서치 기간 없음(연속 운영) <span class="status status-confirmed">확정</span></div></li>
+    <li><div class="mark"></div><div>8개 사업부 과제는 개인 평가 과제 <span class="status status-draft">초안수정</span> — 워크숍에서 직접 풀어주지 않고 맥락·키워드만 참고</div></li>
+    <li><div class="mark"></div><div>신세계아이앤씨 팀: 최종 고객을 "AI 매장 서비스를 이용하는 소비자"로 명확히 정의</div></li>
+    <li><div class="mark"></div><div>페르소나는 아이디어톤보다 한 단계 더 구체적으로 <span class="status status-draft">초안수정</span> — 아이디어톤 피드백(속도감이 너무 빨랐음)을 참고해 시간 배분에 여유를 둘 것</div></li>
+    <li><div class="mark"></div><div>Day3 발표는 반별 진행 + 영상 촬영(신세계측) <span class="status status-confirmed">확정</span> — 발표 후 교육생 상호 질의응답 → 강사 피드백 순서</div></li>
+    <li><div class="mark"></div><div>7개 지역 강사 간 진행 편차 관리 — 표준자료·평가기준 사전 합의 필수</div></li>
+    <li><div class="mark"></div><div>사업부 4개 중 참가 인원 배분이 균등하지 않을 경우 팀 수·발표 시간 재조정</div></li>
+    <li><div class="mark"></div><div>AI는 문제를 대신 정의하는 도구가 아니라 사람이 발견한 것을 확장·비교·보완하는 도구 <span class="status status-confirmed">확정</span> — "Human First, AI Plus" 원칙</div></li>
+    <li><div class="mark"></div><div>평가 기준 6가지(내용이해·구체성·현실성·기준준수·협업·발표) <span class="status status-confirmed">확정</span> — 발표 PDF+영상 기반 심사</div></li>
+    <li><div class="mark"></div><div>지역별 최종 참여 인원 배정 전달 완료 <span class="status status-confirmed">확정</span></div></li>
+    <li><div class="mark"></div><div>Day별 필수/선택 산출물 목록은 계획안 PDF에 빨간 글씨로 별도 표시되어 전달됨 <span class="status status-confirmed">확정</span></div></li>
+    <li><div class="mark"></div><div>성찰·회고 시간은 팀별·강사별로 자유롭게 운영 <span class="status status-confirmed">확정</span></div></li>
+  </ul>
+</section>
+
+<section id="f8">
+  <div class="section-head"><div class="floor-plate">7F</div><div><span class="sec-eyebrow">신세계 확인 필요</span><h2>아직 열려 있는 사항</h2></div></div>
+  <p class="lead">대부분의 쟁점이 정리되었고, 아래 한 가지만 아직 신세계 측 회신 대기 중입니다.</p>
+
+  <div class="openq"><h4>교육 환경 <span class="status status-tentative">잠정</span></h4><p>지역별 Wi-Fi · 개인 노트북 · 생성형 AI 활용 환경이 안정적인지 — 월요일 전달 예정</p></div>
+</section>
+
+<footer>신세계 4개 사업부 CX 개선 워크숍 · 강사 안내 페이지 · TF 2차 회의(8/25) 반영 업데이트 · 8/28 강사 전체 미팅 사전 배포용</footer>
+
+</body>
+</html>
